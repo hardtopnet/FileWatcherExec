@@ -1,8 +1,23 @@
 {
   "profiles": {
-    "FileWatcherExec": {
+    "invalid program": {
+      "commandName": "Project",
+      "commandLineArgs": "/d c:\\aaa /p \"invalid path\\yolo.exe\"",
+      "workingDirectory": "c:\\aaa"
+    },
+    "default associations": {
       "commandName": "Project",
       "commandLineArgs": "/d c:\\aaa",
+      "workingDirectory": "c:\\aaa"
+    },
+    "valid program iview": {
+      "commandName": "Project",
+      "commandLineArgs": "/d c:\\aaa /p \"C:\\Program Files\\IrfanView\\i_view64.exe\"",
+      "workingDirectory": "c:\\aaa"
+    },
+    "valid program fstone": {
+      "commandName": "Project",
+      "commandLineArgs": "/d c:\\aaa /p \"c:\\Program Files (x86)\\FastStone Image Viewer\\FSViewer.exe\"",
       "workingDirectory": "c:\\aaa"
     }
   }
