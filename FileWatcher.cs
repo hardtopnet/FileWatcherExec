@@ -75,8 +75,6 @@ namespace FileWatcherExec
                     return;
                 }
             }
-            
-            Console.WriteLine($"{DateTime.Now:HH:mm:ss} Opening file with program {Path.GetFileName(programToExecute)}");
 
             // Check if the program is already running and kill it if that's the case
             if (closePreviousInstance)
@@ -96,6 +94,8 @@ namespace FileWatcherExec
                     }
                 }
             }
+
+            Console.WriteLine($"{DateTime.Now:HH:mm:ss} Opening file with program {Path.GetFileName(programToExecute)}");
 
             // Executing the program with the new file as an argument
             var process = new Process
