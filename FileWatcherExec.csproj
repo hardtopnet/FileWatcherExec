@@ -7,6 +7,16 @@
     <Nullable>enable</Nullable>
     <StartupObject>HardTopNet.FileWatcherExec.Program</StartupObject>
     <RootNamespace>HardTopNet.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <FileVersion>1.0</FileVersion>
+    <AssemblyVersion>1.0</AssemblyVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>

@@ -1,4 +1,6 @@
-﻿namespace HardTopNet.FileWatcherExec
+﻿using System.Reflection;
+
+namespace HardTopNet.FileWatcherExec
 {
     internal class Program
     {
@@ -10,6 +12,11 @@
             string programArgumentFormat = null;
             bool closePreviousInstance = true;
             string[] fileFilters = null;
+
+            // Log the program version
+            var version = Assembly.GetExecutingAssembly().GetName().Version;
+            var name = Assembly.GetExecutingAssembly().GetName().Name;
+            Console.WriteLine($"{name} v{version.Major}.{version.Minor}");
 
             for (int i = 0; i < args.Length; i++)
             {
