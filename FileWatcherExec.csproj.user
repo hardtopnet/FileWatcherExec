@@ -4,6 +4,6 @@
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup>
-    <ActiveDebugProfile>default associations</ActiveDebugProfile>
+    <ActiveDebugProfile>no parameter</ActiveDebugProfile>
   </PropertyGroup>
 </Project>

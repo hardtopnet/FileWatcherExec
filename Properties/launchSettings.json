@@ -19,6 +19,15 @@
       "commandName": "Project",
       "commandLineArgs": "/d c:\\aaa /p \"c:\\Program Files (x86)\\FastStone Image Viewer\\FSViewer.exe\"",
       "workingDirectory": "c:\\aaa"
+    },
+    "no parameter": {
+      "commandName": "Project",
+      "workingDirectory": "c:\\aaa"
+    },
+    "iview with format - space in dest path - space in custom args with quotes": {
+      "commandName": "Project",
+      "commandLineArgs": "/d \"c:\\aaa\\test space\" /p \"C:\\Program Files\\IrfanView\\i_view64.exe\" /a \"/title=\"\"test space\"\" /file=$\"",
+      "workingDirectory": "c:\\aaa\\test space"
     }
   }
 }
