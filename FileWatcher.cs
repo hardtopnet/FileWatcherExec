@@ -95,7 +95,8 @@ namespace FileWatcherExec
                 }
             }
 
-            Console.WriteLine($"{DateTime.Now:HH:mm:ss} Opening file with program {Path.GetFileName(programToExecute)}");
+            string arguments = BuildArgs(e.FullPath);
+            Console.WriteLine($"{DateTime.Now:HH:mm:ss} Opening file with: {Path.GetFileName(programToExecute)} {arguments}");
 
             // Executing the program with the new file as an argument
             var process = new Process
@@ -103,7 +104,7 @@ namespace FileWatcherExec
                 StartInfo = new ProcessStartInfo
                 {
                     FileName = programToExecute,
-                    Arguments = e.FullPath,
+                    Arguments = arguments,
                     UseShellExecute = false,
                     RedirectStandardOutput = true,
                     CreateNoWindow = true
@@ -115,6 +116,20 @@ namespace FileWatcherExec
             {
                 process.Dispose();
             };
+        }
+
+        private string BuildArgs(string fullPath)
+        {
+            if(fullPath.Contains(" "))
+            {
+                fullPath = $"\"{fullPath}\"";
+            }
+
+            if (string.IsNullOrEmpty(format))
+            {
+                return fullPath;
+            }
+            return format.Replace("$", fullPath);
         }
 
         private string? GetDefaultProgramForExtension(string extension)

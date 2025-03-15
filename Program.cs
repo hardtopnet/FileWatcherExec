@@ -4,7 +4,7 @@
     {
         // TODO
         // add file filter
-        // implement argument format
+        // implement recursive watch
 
         static void Main(string[] args)
         {
@@ -48,11 +48,13 @@
             if (string.IsNullOrEmpty(directoryPath))
             {
                 Console.WriteLine("Usage: FileWatcherExec /d <directoryPath> [/p <programPath>] [/r] [/c] [/a <arg format>]");
-                Console.WriteLine("/d : directory to watch");
-                Console.WriteLine("/p : path to the program to execute. Omit to use default Windows associations");
-                Console.WriteLine("/r : recursive watch");
-                Console.WriteLine("/c : close previous running instance of program");
-                Console.WriteLine("/a : format of the argument to execute program. Omit to use file name as argument");
+                Console.WriteLine("/d directory to watch");
+                Console.WriteLine("/p path to the program to execute. Omit to use default Windows associations");
+                Console.WriteLine("/r recursive watch");
+                Console.WriteLine("/c close previous running instance of program");
+                Console.WriteLine("/a format of the argument to execute program. Omit to use file name as argument");
+                Console.WriteLine("\tenter the format between quotes. The filename placeholder is $");
+                Console.WriteLine("\tdon't add quotes around $, and if you need quotes in the argument, double them");
                 return;
             }
 
