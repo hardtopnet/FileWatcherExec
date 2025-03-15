@@ -10,6 +10,7 @@ namespace FileWatcherExec
         internal string directoryPath;
         internal string programPath;
         internal bool closePreviousInstance;
+        internal string[]? fileFilters;
 
         private static Dictionary<string, string> extensionProgramCache = new Dictionary<string, string>();
 
@@ -26,6 +27,14 @@ namespace FileWatcherExec
             Console.WriteLine($"{DateTime.Now:HH:mm:ss} Recursive? {recursive}");
             Console.WriteLine($"{DateTime.Now:HH:mm:ss} Close previous instance? {closePreviousInstance}");
             Console.WriteLine($"{DateTime.Now:HH:mm:ss} Program argument format: {format}");
+            if (fileFilters != null && fileFilters.Length > 0)
+            {
+                Console.WriteLine($"{DateTime.Now:HH:mm:ss} File filters: {string.Join(", ", fileFilters)}");
+            }
+            else
+            {
+                Console.WriteLine($"{DateTime.Now:HH:mm:ss} File filters: none");
+            }
 
             if (!Directory.Exists(directoryPath))
             {
@@ -66,6 +75,24 @@ namespace FileWatcherExec
             var programToExecute = programPath;
 
             Console.WriteLine($"{DateTime.Now:HH:mm:ss} New file found: {e.Name}");
+
+            if (fileFilters != null && fileFilters.Length > 0)
+            {
+                bool found = false;
+                foreach (var filter in fileFilters)
+                {
+                    if (WildcardMatch(e.Name, filter))
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found)
+                {
+                    Console.WriteLine($"{DateTime.Now:HH:mm:ss} File does not match any filter, skipping");
+                    return;
+                }
+            }
 
             if (programPath == null)
             {
@@ -177,6 +204,12 @@ namespace FileWatcherExec
 
             extensionProgramCache[extension] = defaultProgram;
             return defaultProgram;
+        }
+
+        private bool WildcardMatch(string input, string pattern)
+        {
+            string regexPattern = "^" + System.Text.RegularExpressions.Regex.Escape(pattern).Replace("\\*", ".*").Replace("\\?", ".") + "$";
+            return System.Text.RegularExpressions.Regex.IsMatch(input, regexPattern, System.Text.RegularExpressions.RegexOptions.IgnoreCase);
         }
     }
 }
