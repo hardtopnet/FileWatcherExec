@@ -1,7 +1,6 @@
-﻿
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
-namespace FileWatcherExec
+namespace HardTopNet.FileWatcherExec
 {
     internal class FileWatcher
     {

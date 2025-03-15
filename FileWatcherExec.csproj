@@ -5,7 +5,8 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>FileWatcherExec.Program</StartupObject>
+    <StartupObject>HardTopNet.FileWatcherExec.Program</StartupObject>
+    <RootNamespace>HardTopNet.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
   </PropertyGroup>
 
 </Project>

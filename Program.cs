@@ -1,4 +1,4 @@
-﻿namespace FileWatcherExec
+﻿namespace HardTopNet.FileWatcherExec
 {
     internal class Program
     {
