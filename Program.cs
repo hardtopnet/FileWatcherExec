@@ -2,10 +2,6 @@
 {
     internal class Program
     {
-        // TODO
-        // add file filter
-        // implement recursive watch
-
         static void Main(string[] args)
         {
             string directoryPath = null;
