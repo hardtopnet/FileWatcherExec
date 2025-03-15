@@ -45,8 +45,11 @@ namespace FileWatcherExec
 
             Console.WriteLine($"{DateTime.Now:HH:mm:ss} Watching folder... Press 'q' to quit");
 
-            var watcher = new FileSystemWatcher(directoryPath);
-            watcher.EnableRaisingEvents = true;
+            var watcher = new FileSystemWatcher(directoryPath)
+            {
+                IncludeSubdirectories = recursive,
+                EnableRaisingEvents = true
+            };
             watcher.Created += OnCreated;
 
             while (Console.ReadKey(true).Key != ConsoleKey.Q) { }
