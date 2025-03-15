@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "FileWatcherExec": {
+      "commandName": "Project",
+      "commandLineArgs": "/d c:\\aaa",
+      "workingDirectory": "c:\\aaa"
+    }
+  }
+}
