@@ -21,7 +21,7 @@
                     case "/d":
                         if (i + 1 < args.Length)
                         {
-                            directoryPath = args[++i];
+                            directoryPath = args[++i].TrimEnd('.').TrimEnd('\\');
                         }
                         break;
                     case "/p":
