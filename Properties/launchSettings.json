@@ -48,6 +48,11 @@
       "commandName": "Project",
       "commandLineArgs": "/d c:\\aaa\\.",
       "workingDirectory": "c:\\aaa"
+    },
+    "default with filters": {
+      "commandName": "Project",
+      "commandLineArgs": "/d c:\\aaa /f *.??g;test*.ico",
+      "workingDirectory": "c:\\aaa"
     }
   }
 }

@@ -4,6 +4,6 @@
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup>
-    <ActiveDebugProfile>path ends with \. and has quotes</ActiveDebugProfile>
+    <ActiveDebugProfile>default with filters</ActiveDebugProfile>
   </PropertyGroup>
 </Project>
