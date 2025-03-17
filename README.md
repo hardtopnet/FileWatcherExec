@@ -32,9 +32,12 @@ This allows me to review every new screenshot to ensure I framed it correctly or
 
 This program uses .NET 8
 
-Simply use MSBuild with default parameters  
+Simply use MSBuild with default parameters (specify full path to MSBuild.exe not in PATH)
 `MSBuild.exe /t:rebuild /property:Configuration=Release`
 
-To publish a single executable use the following  
-`dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true -o bin\Publish`
+Or use the `dotnet` command
+`dotnet build`
+
+To publish a single executable use the following
+`dotnet publish -r win-x64 -c Release -o bin\Publish`
 
