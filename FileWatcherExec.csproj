@@ -3,13 +3,17 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
     <StartupObject>HardTopNet.FileWatcherExec.Program</StartupObject>
     <RootNamespace>HardTopNet.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <FileVersion>1.0</FileVersion>
     <AssemblyVersion>1.0</AssemblyVersion>
+	
+	<PublishSingleFile>true</PublishSingleFile>
+    <EnableCompressionInSingleFile>false</EnableCompressionInSingleFile>
+    <PublishTrimmed>false</PublishTrimmed>
+    <SelfContained>false</SelfContained>
   </PropertyGroup>
 
   <ItemGroup>
