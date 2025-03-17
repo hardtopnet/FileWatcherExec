@@ -1,5 +1,4 @@
 /.vs
 /bin
 /obj
-/BUILD.bat
-/publish.bat
+/*.bat
