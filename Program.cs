@@ -66,7 +66,7 @@ namespace HardTopNet.FileWatcherExec
                 Console.WriteLine("/a format of the argument to execute program. Omit to use file name as argument");
                 Console.WriteLine("\tenter the format between quotes. The filename placeholder is $");
                 Console.WriteLine("\tdon't add quotes around $, and if you need quotes in the argument, double them");
-                Console.WriteLine("/f file filters to watch, separated by ;. Supports ? and * wildcards");
+                Console.WriteLine("/f file filters to watch, separated by ;. Supports ? and * wildcards. Requires double quotes.");
                 return;
             }
 
