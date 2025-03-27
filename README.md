@@ -21,10 +21,11 @@ This allows me to review every new screenshot to ensure I framed it correctly or
 - `/r` recursively watch.
 - `/c` close previous instance before launching executable.
 - `/a` executable arguments format. If none specified, uses the new file full path as argument.
-	- use `$` as a placeholder for the new file full path.
-	- e.g. if the executable requires a `/file` switch to load a file, you can specify `/file=$`.
+	- enclose format between double quotes.
+	- use `$` as a placeholder for the new file full path, don't use double quotes around `$`.
+	- e.g. if the executable requires a `/file` switch to load a file, you can specify `/a "/file=$"`.
 - `/f` is the file filter, only the files matching the filters will trigger the executable
-	- the filter can contain wildcards `\*` and `?`, if specifying multiple filters use `;` as separator
+	- the filter can contain wildcards `\*` and `?`, if specifying multiple filters use `;` as separator. Requires double quotes.
 
 > don't forget to use double quotes if any parameter contains spaces.
 
