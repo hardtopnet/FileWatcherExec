@@ -2,4 +2,5 @@
 /bin
 /obj
 /*.bat
+/*.csproj.user
 /Properties/launchSettings.json
