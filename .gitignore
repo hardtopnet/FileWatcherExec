@@ -2,3 +2,4 @@
 /bin
 /obj
 /*.bat
+/Properties/launchSettings.json
